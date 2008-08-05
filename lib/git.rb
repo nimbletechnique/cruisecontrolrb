@@ -27,7 +27,9 @@ class GitRevision < Revision
 end
 
 class Git
-  include Grit
+  include Grit                     
+  Grit.debug = true # to figure out why the builds aren't going out
+  
   include CommandLine
   
   attr_accessor :url, :path, :username, :password, :branch, :project
